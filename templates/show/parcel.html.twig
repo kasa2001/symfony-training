@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Result!{% endblock %}</title>
+    {% block stylesheets %}
+
+    {% endblock %}
+
+    {% block javascripts %}
+
+    {% endblock %}
+</head>
+<body>
+<div class="result">
+    <div class="item">
+        <div>
+            <span>ID: {{ result.id }}</span>
+        </div>
+        <div>
+            <span>Weight: {{ result.weight }}</span>
+        </div>
+        <div>
+            <span>Created date: {{ result.createdDate }}</span>
+        </div>
+        <div>
+            <span>Incoming transport ID: {{ result.incomingTransport.id }}</span>
+        </div>
+        <div>
+            <span>Outgoing transport ID: {{ result.outgoingTransport.id }}</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

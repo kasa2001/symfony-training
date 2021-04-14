@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Result!{% endblock %}</title>
+    {% block stylesheets %}
+
+    {% endblock %}
+
+    {% block javascripts %}
+
+    {% endblock %}
+</head>
+<body>
+<div class="result">
+    <div class="item">
+        <div>
+            <span>ID: {{ result.id }}</span>
+        </div>
+        <div>
+            <span>Arrived: {{ result.arrivedDate }}</span>
+        </div>
+        <div>
+            <span>Left: {{ result.leftDate }}</span>
+        </div>
+        <div>
+            <span>Transport type: {{ result.transportType.name }}</span>
+        </div>
+        <div>
+            <span>Products: </span>
+            {% for key, value in result.products %}
+                <div class="item">
+                    <div>
+                        <span>ID: {{ value.id }}</span>
+                    </div>
+                    <div>
+                        <span>Weight: {{ value.weight }}</span>
+                    </div>
+                    <div>
+                        <span>Created date: {{ value.createdDate }}</span>
+                    </div>
+                    <div>
+                        <span>Incoming transport ID: {{ value.incomingTransport.id }}</span>
+                    </div>
+                    <div>
+                        <span>Outgoing transport ID: {{ value.outgoingTransport.id }}</span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
